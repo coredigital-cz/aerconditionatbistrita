@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Servicii profesionale de montaj, igienizare și revizii aer condiționat în Bistrița. PFA Autorizat, execuție rapidă și curată cu aspirator industrial.">
+  <meta name="theme-color" content="#0284c7">
+  <title>Montaj &amp; Service Aer Condiționat Bistrița | Bogdan PFA</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #06b6d4;
+      --ink: #0f172a;
+      --light-bg: #f0fdfa;
+      --card-bg: #ffffff;
+      --mobile-bar-h: 72px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--light-bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── PRELOADER ────── */
+    .loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #ffffff;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-spinner {
+      width: 44px; height: 44px;
+      border: 3px solid #e2e8f0;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── SCROLL REVEAL EFFECT ────── */
+    .reveal { 
+      opacity: 0; transform: translateY(20px); 
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ── NAVIGATION CURATĂ ────── */
+    .nav {
+      position: absolute; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 2rem; z-index: 10;
+    }
+    .nav-brand { font-size: 1.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #ffffff; text-decoration: none; }
+    .nav-brand span { color: #ccfbf1; }
+    .nav-zone { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #f0fdfa; background: rgba(255,255,255,0.2); padding: 0.4rem 1rem; border-radius: 50px; backdrop-filter: blur(5px); }
+
+    /* ── HERO VIBRANT CU COLOR-GRADIENT OVERLAY ────── */
+    .hero {
+      position: relative; min-height: 90vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 8rem 1.5rem 6rem 1.5rem; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=90');
+      background-size: cover; background-position: center; z-index: 0;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, 
+        rgba(2, 132, 199, 0.85) 0%, 
+        rgba(6, 182, 212, 0.75) 50%, 
+        rgba(15, 118, 110, 0.95) 100%
+      );
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 840px; }
+    .hero-eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: #ccfbf1; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .hero-motto { font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 500; color: #f0fdfa; max-width: 680px; margin: 0 auto 3rem auto; line-height: 1.6; }
+
+    /* ── BUTTONS HIGH-IMPACT ────── */
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 800; padding: 1.1rem 2.5rem; border-radius: 100px;
+      text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .btn-primary { background: #ffffff; color: var(--primary-dark); }
+    .btn-primary:hover { background: var(--ink); color: #ffffff; transform: translateY(-3px); box-shadow: 0 12px 24px rgba(15,23,42,0.15); }
+    .btn-outline { background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(5px); }
+    .btn-outline:hover { border-color: #ffffff; background: rgba(255,255,255,0.3); transform: translateY(-3px); }
+
+    /* ── SECTIONS ARCHITECTURE ────── */
+    .section { padding: 7rem 2rem; position: relative; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    
+    .section-head { margin-bottom: 4.5rem; max-width: 700px; }
+    .section-head .eyebrow { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary-dark); margin-bottom: 0.5rem; display: block; }
+    .section-head h2 { font-size: clamp(2rem, 4.5vw, 2.6rem); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .section-head p { color: #475569; margin-top: 1rem; font-size: 1.05rem; line-height: 1.6; }
+
+    /* Grid Layout Bright & Clean */
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .card {
+      background: var(--card-bg); border: 1px solid rgba(2,132,199,0.08);
+      padding: 3rem 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(2,132,199,0.03);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(2,132,199,0.08); }
+    
+    .card h3 { font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .card-list { list-style: none; }
+    .card-list li { font-size: 1rem; color: #334155; margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; line-height: 1.5; }
+    .card-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 900; font-size: 1.1rem; top: -2px; }
+
+    /* High-Impact Color Banner */
+    .info-banner {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+      padding: 3.5rem; border-radius: 24px; margin-top: 4.5rem; color: #ffffff;
+      box-shadow: 0 15px 35px rgba(2,132,199,0.15);
+    }
+    .info-banner h4 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; color: #ffffff; }
+    .info-banner p { color: #e0f2fe; font-size: 1.1rem; max-width: 850px; line-height: 1.6; font-weight: 500; }
+
+    /* ── FOOTER COLORAT ── */
+    footer { background: var(--ink); padding: 4rem 2rem; text-align: center; font-size: 0.9rem; color: #94a3b8; }
+    footer p strong { color: #ffffff; font-weight: 700; }
+
+    /* ── STICKY BAR MOBIL ────── */
+    .mobile-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
+      height: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      padding: 0.8rem 1.5rem calc(0.8rem + env(safe-area-inset-bottom));
+      gap: 1rem; border-top: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+    }
+    .mobile-bar a {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 100px; font-weight: 800; font-size: 0.85rem; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .mobile-bar .m-call { background: var(--primary); color: #ffffff; box-shadow: 0 4px 12px rgba(2,132,199,0.2); }
+    .mobile-bar .m-wa { background: #25D366; color: #ffffff; box-shadow: 0 4px 12px rgba(37,211,102,0.2); }
+
+    /* Desktop Floating Button */
+    .float-wa {
+      position: fixed; bottom: 2.5rem; right: 2.5rem; background: #25D366; color: #fff;
+      width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 12px 30px rgba(37, 211, 102, 0.25); z-index: 999;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .float-wa:hover { transform: scale(1.05) translateY(-2px); }
+    .float-wa svg { width: 28px; height: 28px; fill: currentColor; }
+
+    @media (max-width: 768px) {
+      .float-wa { display: none; }
+      .mobile-bar { display: flex; }
+      body { padding-bottom: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom)); }
+      .card { padding: 2.5rem 2rem; }
+      .info-banner { padding: 2.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader-spinner"></div></div>
+
+<!-- Navigatie Fara Butoane în Colt -->
+<section class="hero">
+  <nav class="nav">
+    <a href="#" class="nav-brand">Bogdan<span>Clima</span></a>
+    <div class="nav-zone">Bistrița &amp; Împrejurimi</div>
+  </nav>
+
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Confort Termic fără Compromisuri</span>
+    <h1>Montaj &amp; Service Aer Condiționat</h1>
+    <p class="hero-motto">Echipați-vă locuința cu sisteme performante! Ofer servicii profesionale de instalare și întreținere realizate cu scule de ultimă generație, rapid și perfect curat.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/40740540255" class="btn btn-primary" target="_blank" rel="noopener">WhatsApp Direct</a>
+      <a href="tel:+40740540255" class="btn btn-outline">Solicită Ofertă</a>
+    </div>
+  </div>
+</section>
+
+<!-- Servicii pe Fundal Deschis -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Servicii Complete</span>
+      <h2>Soluții Profesionale de Climatizare</h2>
+      <p>Intervenții tehnice sigure, adaptate optim pentru orice tip de spațiu rezidențial sau comercial.</p>
+    </div>
+    
+    <div class="grid-cards reveal">
+      <div class="card">
+        <h3>Instalare &amp; Diagnostic</h3>
+        <ul class="card-list">
+          <li>Montaj profesional dedicat pentru orice marcă sau model</li>
+          <li>Consultanță personalizată în alegerea aparatului potrivit</li>
+          <li>Configurări trasee frigorifice și poziționare optimă</li>
+          <li>Utilizare exclusivă de scule și echipamente de ultimă generație</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>Mentenanță &amp; Întreținere</h3>
+        <ul class="card-list">
+          <li>Igienizare completă profundă și revizii tehnice periodice</li>
+          <li>Încărcare rapidă cu agent frigorific performant (freon R32)</li>
+          <li>Curățarea filtrelor pentru îmbunătățirea calității aerului</li>
+          <li>Verificarea etanșeității componentelor și circuitului</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Puncte Forte - Banner Colorat de Impact -->
+    <div class="info-banner reveal">
+      <h4>De ce să colaborezi cu noi?</h4>
+      <p style="margin-bottom: 1rem;"><strong>✓ PFA Autorizat:</strong> Fiecare lucrare beneficiază de transparență deplină, oferind factură fiscală și garanție completă.</p>
+      <p style="margin-bottom: 1rem;"><strong>✓ Curățenie Desăvârșită:</strong> Protejăm locuința dumneavoastră folosind un aspirator industrial performant pentru praf în timpul perforărilor.</p>
+      <p><strong>✓ Promptitudine și Prețuri Corecte:</strong> Intervenim rapid în Bistrița și localitățile limitrofe, garantând prețuri transparente, fără costuri ascunse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Desktop Contact Plutitor -->
+<a href="https://wa.me/40740540255" class="float-wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.9 8.9 0 0 0 5.36 1.82H12a8.94 8.94 0 0 0 5.6-15.23zm-5.55 13.7a7.4 7.4 0 0 1-4.06-1.2l-.29-.17-2.2.75.74-2.14-.19-.29a7.42 7.42 0 0 1 11.7-9.04 7.36 7.36 0 0 1 2.18 5.25 7.43 7.43 0 0 1-7.88 6.84zm4.06-5.56c-.22-.11-1.31-.65-1.52-.72-.2-.08-.35-.11-.5.11-.15.21-.57.72-.7.86-.13.15-.26.16-.48.05a6.06 6.06 0 0 1-1.77-1.1 6.6 6.6 0 0 1-1.22-1.51c-.13-.22 0-.34.12-.46.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.04-.43-.08-.11-.5-1.2-.69-1.65-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.29-.2.22-.78.76-.78 1.85s.8 2.14.91 2.29c.11.15 1.55 2.37 3.76 3.23 2.21.86 2.21.57 2.61.54.4-.04 1.31-.54 1.49-1.06.18-.51.18-.95.13-1.05-.06-.1-.22-.16-.44-.27z"/></svg>
+</a>
+
+<!-- Sticky Bar Mobil -->
+<div class="mobile-bar">
+  <a href="tel:+40740540255" class="m-call">Sună Acum</a>
+  <a href="https://wa.me/40740540255" class="m-wa" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<footer>
+  <p><strong>Bogdan — Servicii Autorizate Climatizare</strong></p>
+  <p style="margin-top: 0.4rem; color: #64748b;">Bistrița și împrejurimi &bull; Telefon: 0740 540 255</p>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function() { document.getElementById('loader').classList.add('hidden'); }, 60);
+  });
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+</script>
+</body>
+</html>
